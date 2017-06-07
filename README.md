@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # spring-boot-sample-data-jpa
 
 #### How to run
@@ -15,6 +14,3 @@ http://localhost:8180/
 - https://spring.io/guides/gs/spring-boot/
 - https://spring.io/guides/gs/accessing-data-jpa/
 - https://dzone.com/articles/integrate-h2-database-in-your-spring-boot-applicat
-=======
-# spring-boot-sample-data-jpa
->>>>>>> refs/remotes/choose_remote_name/master
