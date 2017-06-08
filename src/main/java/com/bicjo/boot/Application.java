@@ -17,25 +17,32 @@ import com.bicjo.boot.repository.UserRepository;
 public class Application {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class);
 	}
-	
+
 	@Bean
-	public CommandLineRunner initModel(UserRepository userRepository) {
-		
-		return (args) -> {
-			List<User> users = new ArrayList<User>(){
-				private static final long serialVersionUID = 3235589211981968698L;
-			{
-				add(new User("Joven"));
-				add(new User("Rose"));
-				add(new User("Chance"));
-			}};
-			userRepository.save(users);
-			
-			LOG.info(users.toString());
+	public CommandLineRunner initModel(final UserRepository userRepository) {
+
+		return new CommandLineRunner() {
+
+			@Override
+			public void run(String... args) throws Exception {
+
+				List<User> users = new ArrayList<User>() {
+					private static final long serialVersionUID = 3235589211981968698L;
+					{
+						add(new User("Joven"));
+						add(new User("Rose"));
+						add(new User("Chance"));
+					}
+				};
+				userRepository.save(users);
+
+				LOG.info(users.toString());
+
+			}
 		};
 
 	}
